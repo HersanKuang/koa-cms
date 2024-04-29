@@ -1,0 +1,26 @@
+# mac 系统自带的目录
+.DS_Store
+
+# 项目的构建后的文件目录
+dist
+
+# 项目的依赖文件目录
+node_modules
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 用户上传文件
+upload
+
+# 相关编辑器的配置文件目录
+.idea
+.vscode
+.project
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
