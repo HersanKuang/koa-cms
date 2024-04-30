@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                          // 编译到的 ECMAScript 版本，es2018 支持 async/await
+    "module": "CommonJS",                        // 模块系统，Node.js 使用 CommonJS
+    "lib": ["ESNext"],                           // 编译时需要引入的库文件的列表
+    "outDir": "./dist",                          // 指定输出目录
+    "rootDir": "./src",                          // 指定输入文件的根目录
+    "strict": true,                              // 启用所有严格类型检查选项
+    "esModuleInterop": true,                     // 允许导出非ES模块
+    "skipLibCheck": true,                        // 跳过所有声明文件（*.d.ts）的类型检查
+    "forceConsistentCasingInFileNames": true,    // 禁止对同一个文件的不一致的大小写引用
+    "moduleResolution": "node",                  // 模块解析策略，Node 适用的是 "node"
+    "resolveJsonModule": true,                   // 允许导入.json文件作为模块
+    "sourceMap": true,                           // 生成相应的 '.map' 文件
+    "noImplicitAny": true,                       // 在表达式和声明上有隐含的 'any' 类型时报错
+    "noUnusedLocals": true,                      // 报告文件中未使用的局部变量错误
+    "noUnusedParameters": true,                  // 报告函数中未使用的参数错误
+    "noImplicitReturns": true,                   // 检查函数是否都有返回值
+    "noFallthroughCasesInSwitch": true,          // 检查 Switch 语句，防止 case 穿透
+    "removeComments": false,                     // 不删除编译后代码中的注释
+    "experimentalDecorators": true,              // 启用对 ES 装饰器的实验性支持
+    "emitDecoratorMetadata": true                // 为装饰器提供元数据支持
+  },
+  "include": [
+    "src/**/*"                                   // 包含的文件路径模式
+  ],
+  "exclude": [
+    "node_modules",                              // 排除的文件路径模式
+    "**/*.spec.ts"                               // 排除所有测试文件
+  ]
+}
