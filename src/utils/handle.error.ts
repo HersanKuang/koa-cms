@@ -38,7 +38,7 @@ app.on('error', (error: string, ctx: Record<string, any>) => {
       message = '密码错误，请重新输入'
       break
     case UNAUTHORIZATION:
-      code = -1005
+      code = 401
       message = '无效的token或者token已过期'
       break
     case ENABLE_IS_NOT_EXISTS:
