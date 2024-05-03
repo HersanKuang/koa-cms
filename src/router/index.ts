@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 import baseServerError from '../shared/middleware/base_error.middleware'
 
 async function registerRouters(app: Record<string, any>) {

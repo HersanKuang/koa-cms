@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import moduleAlias from 'module-alias'
 
 // 设置别名
