@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 // 使用绝对路径读取密钥文件
 const PRIVATE_KEY = fs.readFileSync(
