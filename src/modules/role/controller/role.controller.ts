@@ -1,15 +1,14 @@
 import roleService from '../service/role.service'
 import { SERVER_BASE_ERROR } from '../../../config/error.constant'
-import { CTX } from '../../../typings/global'
 
 class RoleController {
-  async create(ctx: CTX) {
+  async create(ctx: KoaCTX) {
     try {
       const { name, intro } = ctx.request.body
       const result = await roleService.create({ name, intro })
       // 获取新建的角色的id
       const roleId = await roleService.queryRoleId()
-      let menuIds = ctx.request.body.menuList
+      let menuIds = ctx.request.body.menuList ?? []
 
       // 对管理员的权限处理
       if (Number(roleId) === 1) {
@@ -31,7 +30,7 @@ class RoleController {
       ctx.app.emit('error', SERVER_BASE_ERROR, ctx)
     }
   }
-  async remove(ctx: CTX) {
+  async remove(ctx: KoaCTX) {
     try {
       const roleId = ctx.params.roleId
       await roleService.remove(roleId)
@@ -44,10 +43,10 @@ class RoleController {
     }
   }
 
-  async update(ctx: CTX) {
+  async update(ctx: KoaCTX) {
     try {
       const roleId = ctx.params.roleId
-      await roleService.assignMenu(roleId, ctx.request.body?.menuList)
+      await roleService.assignMenu(roleId, ctx.request.body?.menuList ?? [])
       delete ctx.request.body?.menuList
       await roleService.update(roleId, ctx.request.body)
       ctx.body = {
@@ -59,7 +58,7 @@ class RoleController {
     }
   }
 
-  async list(ctx: CTX) {
+  async list(ctx: KoaCTX) {
     try {
       // 1.获取角色的基本信息
       const { offset = 0, size = 100 } = ctx.query
@@ -84,10 +83,10 @@ class RoleController {
   }
 
   // 给角色分配权限
-  async assignMenu(ctx: CTX) {
+  async assignMenu(ctx: KoaCTX) {
     try {
       const roleId = ctx.params.roleId
-      let menuIds = ctx.request.body.menuList
+      let menuIds = ctx.request.body.menuList ?? []
 
       // 对管理员的权限处理
       if (Number(roleId) === 1) {
@@ -108,7 +107,7 @@ class RoleController {
   }
 
   // 获取当前角色的菜单
-  async userMenu(ctx: CTX) {
+  async userMenu(ctx: KoaCTX) {
     try {
       const roleId = ctx.params.roleId
       const result = await roleService.getRoleMenu(roleId)
@@ -124,4 +123,5 @@ class RoleController {
 }
 
 export default new RoleController()
-export const { create, remove, update, list, assignMenu, userMenu } = new RoleController()
+export const { create, remove, update, list, assignMenu, userMenu } =
+  new RoleController()

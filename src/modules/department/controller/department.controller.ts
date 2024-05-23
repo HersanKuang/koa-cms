@@ -1,9 +1,8 @@
 import departmentService from '../service/department.service'
 import { SERVER_BASE_ERROR } from '../../../config/error.constant'
-import { CTX } from '../../../typings/global'
 
 class DepartmentController {
-  async create(ctx: CTX) {
+  async create(ctx: KoaCTX) {
     try {
       await departmentService.create(ctx.request.body)
       ctx.body = {
@@ -15,7 +14,7 @@ class DepartmentController {
     }
   }
 
-  async remove(ctx: CTX) {
+  async remove(ctx: KoaCTX) {
     try {
       const departmentId = ctx.params.id
       await departmentService.remove(departmentId)
@@ -28,7 +27,7 @@ class DepartmentController {
     }
   }
 
-  async update(ctx: CTX) {
+  async update(ctx: KoaCTX) {
     try {
       const departmentId = ctx.params.id
       await departmentService.update(departmentId, ctx.request.body)
@@ -41,7 +40,7 @@ class DepartmentController {
     }
   }
 
-  async list(ctx: CTX) {
+  async list(ctx: KoaCTX) {
     const { offset = 0, size = 10 } = ctx.request.body
     try {
       const data = await departmentService.list(offset, size)

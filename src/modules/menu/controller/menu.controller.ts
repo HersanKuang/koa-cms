@@ -1,9 +1,8 @@
 import menuService from '../service/menu.service'
 import { SERVER_BASE_ERROR } from '../../../config/error.constant'
-import { CTX } from '../../../typings/global'
 
 class MenuController {
-  async create(ctx: CTX) {
+  async create(ctx: KoaCTX) {
     try {
       const menu = ctx.request.body
       const result = await menuService.create(menu)
@@ -16,7 +15,7 @@ class MenuController {
       ctx.app.emit('error', SERVER_BASE_ERROR, ctx)
     }
   }
-  async list(ctx: CTX) {
+  async list(ctx: KoaCTX) {
     try {
       const result = await menuService.wholeMenu()
       ctx.body = {

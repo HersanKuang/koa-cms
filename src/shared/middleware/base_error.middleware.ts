@@ -1,7 +1,6 @@
 import { SERVER_BASE_ERROR } from '../../config/error.constant'
-import { CTX, Next } from '../../typings/global'
 
-function baseServerError(ctx: CTX, next: Next) {
+function baseServerError(ctx: KoaCTX, next: KoaNext) {
   return next().catch((err) => {
     // 检查错误是否已经被处理或标记为自定义错误
     if (!err.isHandled) {

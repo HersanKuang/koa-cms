@@ -6,9 +6,8 @@ import {
   SERVER_BASE_ERROR
 } from '../../../config/error.constant'
 import md5Password from '../../../utils/md5_password'
-import { CTX, Next } from '../../../typings/global'
 
-const verifyLogin = async (ctx: CTX, next: Next) => {
+const verifyLogin = async (ctx: KoaCTX, next: KoaNext) => {
   try {
     const { name, password } = ctx.request.body
     // 1.判断用户名和密码是否为空

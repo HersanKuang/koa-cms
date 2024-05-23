@@ -8,9 +8,8 @@ import {
 } from '../../../config/error.constant'
 import userInfoService from '../../../shared/service/catchUserInfo.service'
 import md5Password from '../../../utils/md5_password'
-import { CTX, Next } from '../../../typings/global'
 
-const verifyUser = async (ctx: CTX, next: Next) => {
+const verifyUser = async (ctx: KoaCTX, next: KoaNext) => {
   // 1.获取用户传过来的信息
   const { name, password, roleId, departmentId, enable } = ctx.request.body
   const userId = ctx.params.id
@@ -35,7 +34,7 @@ const verifyUser = async (ctx: CTX, next: Next) => {
   await next()
 }
 
-const verifyNameExists = async (ctx: CTX, next: Next) => {
+const verifyNameExists = async (ctx: KoaCTX, next: KoaNext) => {
   const [values] = await userInfoService.findUserName(ctx.request.body.name)
   if (Array.isArray(values) && values.length) {
     return ctx.app.emit('error', NAME_IS_ALREADY_EXISTS, ctx)
@@ -44,7 +43,7 @@ const verifyNameExists = async (ctx: CTX, next: Next) => {
   await next()
 }
 
-const verifyUserExists = async (ctx: CTX, next: Next) => {
+const verifyUserExists = async (ctx: KoaCTX, next: KoaNext) => {
   try {
     const userId = ctx.params.id
     const [values] = await userInfoService.findUserId(userId)
@@ -58,7 +57,7 @@ const verifyUserExists = async (ctx: CTX, next: Next) => {
   }
 }
 
-const handlePassword = async (ctx: CTX, next: Next) => {
+const handlePassword = async (ctx: KoaCTX, next: KoaNext) => {
   const { password } = ctx.request.body
   // 使用md5加密密码
   ctx.request.body.password = md5Password(password)

@@ -1,17 +1,7 @@
 import connection from '../../../app/databases'
 
 class UserService {
-  /**
-   * @param {string} id 用户id
-   * @param {string} name 用户名
-   * @param {string} realname 真实姓名
-   * @param {string} password 密码
-   * @param {string} cellphone 电话号码
-   * @param {number} enable 启用状态：启用1，禁用0
-   * @param {number} departmentId 部门id
-   * @param {number} roleId 角色id
-   */
-  async create(userInfo: Record<string, any>) {
+  async create(userInfo: UserInfoType) {
     const keys = Object.keys(userInfo)
     const values = Object.values(userInfo)
 

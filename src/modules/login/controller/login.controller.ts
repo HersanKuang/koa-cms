@@ -1,10 +1,9 @@
 import jwt from 'jsonwebtoken'
 import { SERVER_BASE_ERROR } from '../../../config/error.constant'
 import { PRIVATE_KEY } from '../../../config/secret.config'
-import { CTX } from '../../../typings/global'
 
 class LoginController {
-  sign(ctx: CTX) {
+  sign(ctx: KoaCTX) {
     try {
       const { id, name } = ctx.user
       const token = jwt.sign({ id, name }, PRIVATE_KEY, {

@@ -1,4 +1,4 @@
-import mysql from 'mysql2'
+import mysql, { PoolConnection, MysqlError } from 'mysql2'
 import {
   DB_HOST,
   DB_PORT,
@@ -17,7 +17,7 @@ const connectionPool = mysql.createPool({
 })
 
 // 检测连接数据库是否成功
-connectionPool.getConnection((err, conn) => {
+connectionPool.getConnection((err: MysqlError | null, conn: PoolConnection) => {
   // 判断是否有错误信息
   if (err) {
     console.error('数据库连接失败', err)

@@ -1,9 +1,3 @@
-import dotenv from 'dotenv'
-
-// 动态引入环境变量
-const envFile = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env'
-dotenv.config({ path: envFile })
-
 // 从 process.env 解构需要的环境变量
 const {
   SERVER_HOST,

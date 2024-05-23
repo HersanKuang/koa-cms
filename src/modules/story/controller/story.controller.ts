@@ -1,9 +1,8 @@
 import storyService from '../service/story.service'
 import { SERVER_BASE_ERROR } from '../../../config/error.constant'
-import { CTX } from '../../../typings/global'
 
 class StoryController {
-  async create(ctx: CTX) {
+  async create(ctx: KoaCTX) {
     try {
       await storyService.create(ctx.request.body)
       ctx.body = {
@@ -14,7 +13,7 @@ class StoryController {
       ctx.app.emit('error', SERVER_BASE_ERROR, ctx)
     }
   }
-  async list(ctx: CTX) {
+  async list(ctx: KoaCTX) {
     const { offset = 0, size = 10 } = ctx.request.body
     try {
       const data = await storyService.list(offset, size)

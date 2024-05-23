@@ -8,9 +8,6 @@
   "delay": 1000,
   "verbose": true,
   "restartable": "rs",
-  "env": {
-    "NODE_ENV": "development"
-  },
   "events": {
     "restart": "echo 'Koa Server has been restarted due to changes...'"
   },

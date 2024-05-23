@@ -1,9 +1,8 @@
 import jwt from 'jsonwebtoken'
 import { UNAUTHORIZATION } from '../../config/error.constant'
 import { PUBLIC_KEY } from '../../config/secret.config'
-import { CTX, Next } from '../../typings/global'
 
-const verifyAuth = async (ctx: CTX, next: Next) => {
+const verifyAuth = async (ctx: KoaCTX, next: KoaNext) => {
   const authorization = ctx.headers.authorization
   if (!authorization) {
     return ctx.app.emit('error', UNAUTHORIZATION, ctx)

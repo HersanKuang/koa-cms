@@ -1,9 +1,8 @@
 import goodService from '../../goods/service/goods.service'
 import { SERVER_BASE_ERROR } from '../../../config/error.constant'
-import { CTX } from '../../../typings/global'
 
 class GoodsService {
-  async list(ctx: CTX) {
+  async list(ctx: KoaCTX) {
     const { offset = 0, size = 10 } = ctx.request.body
     try {
       const data = await goodService.list(offset, size)
@@ -16,7 +15,7 @@ class GoodsService {
     }
   }
   // 根据查询当前商品所属分类的数量
-  async getCategoryCount(ctx: CTX) {
+  async getCategoryCount(ctx: KoaCTX) {
     try {
       const data = await goodService.getCategoryCount()
       ctx.body = {
@@ -28,7 +27,7 @@ class GoodsService {
     }
   }
   // 根据查询当前商品所属分类的数量
-  async getCategoryFavor(ctx: CTX) {
+  async getCategoryFavor(ctx: KoaCTX) {
     try {
       const data = await goodService.getCategoryFavor()
       ctx.body = {
@@ -40,7 +39,7 @@ class GoodsService {
     }
   }
   // 查询总量
-  async getAmount(ctx: CTX) {
+  async getAmount(ctx: KoaCTX) {
     try {
       const data = await goodService.getAmount()
       ctx.body = {
@@ -52,7 +51,7 @@ class GoodsService {
     }
   }
   // 根据查询当前商品所属分类的销量
-  async getCategorySale(ctx: CTX) {
+  async getCategorySale(ctx: KoaCTX) {
     try {
       const data = await goodService.getCategorySale()
       ctx.body = {
@@ -64,7 +63,7 @@ class GoodsService {
     }
   }
   // 根据查询当前商品所属地区的销量
-  async getAddressSale(ctx: CTX) {
+  async getAddressSale(ctx: KoaCTX) {
     try {
       const data = await goodService.getAddressSale()
       ctx.body = {

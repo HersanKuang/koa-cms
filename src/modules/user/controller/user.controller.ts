@@ -1,10 +1,9 @@
 import userService from '../service/user.service'
 import { v4 as uuidv4 } from 'uuid'
 import { SERVER_BASE_ERROR } from '../../../config/error.constant'
-import { CTX } from '../../../typings/global'
 
 class UserController {
-  async create(ctx: CTX) {
+  async create(ctx: KoaCTX) {
     // 创建uuid
     ctx.request.body.id = uuidv4()
 
@@ -21,7 +20,7 @@ class UserController {
     }
   }
 
-  async update(ctx: CTX) {
+  async update(ctx: KoaCTX) {
     try {
       const userId = ctx.params.id
       await userService.update(userId, ctx.request.body)
@@ -35,7 +34,7 @@ class UserController {
     }
   }
 
-  async remove(ctx: CTX) {
+  async remove(ctx: KoaCTX) {
     try {
       const userId = ctx.params.id
       await userService.remove(userId)
@@ -48,7 +47,7 @@ class UserController {
     }
   }
 
-  async list(ctx: CTX) {
+  async list(ctx: KoaCTX) {
     const { offset = 0, size = 10, ...rest } = ctx.request.body
     try {
       const data = await userService.list(offset, size, rest)
@@ -62,7 +61,7 @@ class UserController {
     }
   }
 
-  async detail(ctx: CTX) {
+  async detail(ctx: KoaCTX) {
     try {
       const userId = ctx.params.id
       const [[result]]: any = await userService.userDetail(userId)
