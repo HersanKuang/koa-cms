@@ -1,15 +1,12 @@
-import path from 'node:path'
-import moduleAlias from 'module-alias'
+import * as path from 'path'
+import * as moduleAlias from 'module-alias'
 
-// 设置别名
+// 配置路径别名
 moduleAlias.addAliases({
-  '@/modules': path.resolve(__dirname, '..', 'modules'),
-  '@/app': path.resolve(__dirname, '..', 'app'),
-  '@/router': path.resolve(__dirname, '..', 'router'),
-  '@/config': path.resolve(__dirname, '..', 'config'),
-  '@/utils': path.resolve(__dirname, '..', 'utils'),
-  '@/shared': path.resolve(__dirname, '..', 'shared')
+  '@/app': path.join(__dirname, '../app'),
+  '@/config': path.join(__dirname, '../config'),
+  '@/modules': path.join(__dirname, '../modules'),
+  '@/router': path.join(__dirname, '../router'),
+  '@/shared': path.join(__dirname, '../shared'),
+  '@/utils': path.join(__dirname, '../utils')
 })
-
-// 初始化 module-alias
-moduleAlias()

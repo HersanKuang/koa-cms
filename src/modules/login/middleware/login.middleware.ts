@@ -1,11 +1,11 @@
-import userService from '../../user/service/user.service'
+import userService from '@/modules/user/service/user.service'
 import {
   NAME_IS_NOT_EXISTS,
   NAME_OR_PASSWORD_IS_REQUIRED,
   PASSWORD_IS_INCORRENT,
   SERVER_BASE_ERROR
-} from '../../../config/error.constant'
-import md5Password from '../../../utils/md5_password'
+} from '@/config/error.constant'
+import md5Password from '@/utils/md5_password'
 
 const verifyLogin = async (ctx: KoaCTX, next: KoaNext) => {
   try {

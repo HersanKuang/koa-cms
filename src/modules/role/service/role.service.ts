@@ -1,5 +1,5 @@
-import menuService from '../../menu/service/menu.service'
-import connection from '../../../app/databases'
+import menuService from '@/modules/menu/service/menu.service'
+import connection from '@/app/databases'
 
 class RoleService {
   async create(role: Record<string, any>) {

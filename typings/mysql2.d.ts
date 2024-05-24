@@ -1,4 +1,3 @@
-// @types/mysql2 库在使用 tsc 编译的时候太多报错，手动声明 mysql2
 declare module 'mysql2' {
   import {
     ConnectionOptions,

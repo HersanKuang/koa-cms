@@ -1,5 +1,5 @@
 import storyService from '../service/story.service'
-import { SERVER_BASE_ERROR } from '../../../config/error.constant'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 class StoryController {
   async create(ctx: KoaCTX) {

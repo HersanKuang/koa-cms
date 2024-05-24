@@ -1,5 +1,5 @@
 import menuService from '../service/menu.service'
-import { SERVER_BASE_ERROR } from '../../../config/error.constant'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 class MenuController {
   async create(ctx: KoaCTX) {

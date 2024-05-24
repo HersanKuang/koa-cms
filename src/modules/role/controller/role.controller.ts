@@ -1,5 +1,5 @@
 import roleService from '../service/role.service'
-import { SERVER_BASE_ERROR } from '../../../config/error.constant'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 class RoleController {
   async create(ctx: KoaCTX) {

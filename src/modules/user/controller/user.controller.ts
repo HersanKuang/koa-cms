@@ -1,6 +1,6 @@
 import userService from '../service/user.service'
 import { v4 as uuidv4 } from 'uuid'
-import { SERVER_BASE_ERROR } from '../../../config/error.constant'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 class UserController {
   async create(ctx: KoaCTX) {

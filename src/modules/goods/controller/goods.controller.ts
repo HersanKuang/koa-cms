@@ -1,5 +1,5 @@
-import goodService from '../../goods/service/goods.service'
-import { SERVER_BASE_ERROR } from '../../../config/error.constant'
+import goodService from '@/modules/goods/service/goods.service'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 class GoodsService {
   async list(ctx: KoaCTX) {

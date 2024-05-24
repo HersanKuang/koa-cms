@@ -5,9 +5,9 @@ import {
   DEPARTMENTID_IS_NOT_EXISTS,
   ROLEID_IS_NOT_EXISTS,
   USER_IS_NOT_EXISTS
-} from '../../../config/error.constant'
-import userInfoService from '../../../shared/service/catchUserInfo.service'
-import md5Password from '../../../utils/md5_password'
+} from '@/config/error.constant'
+import userInfoService from '@/shared/service/catchUserInfo.service'
+import md5Password from '@/utils/md5_password'
 
 const verifyUser = async (ctx: KoaCTX, next: KoaNext) => {
   // 1.获取用户传过来的信息

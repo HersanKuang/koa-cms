@@ -1,4 +1,4 @@
-import { SERVER_BASE_ERROR } from '../../config/error.constant'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 function baseServerError(ctx: KoaCTX, next: KoaNext) {
   return next().catch((err) => {

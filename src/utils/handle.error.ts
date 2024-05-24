@@ -10,7 +10,7 @@ import {
   DEPARTMENTID_IS_NOT_EXISTS,
   USER_IS_NOT_EXISTS,
   SERVER_BASE_ERROR
-} from '../config/error.constant'
+} from '@/config/error.constant'
 
 app.on('error', (error: string, ctx: Record<string, any>) => {
   let code: number = 0

@@ -1,4 +1,4 @@
-import connection from '../../../app/databases'
+import connection from '@/app/databases'
 
 class UserService {
   async create(userInfo: UserInfoType) {

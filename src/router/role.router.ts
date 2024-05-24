@@ -7,7 +7,7 @@ import {
   list,
   assignMenu,
   userMenu
-} from '../modules/role/controller/role.controller'
+} from '@/modules/role/controller/role.controller'
 
 const roleRouter = new Router({ prefix: '/role' })
 

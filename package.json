@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/main.ts",
-    "start:dev": "cross-env-shell NODE_ENV=development nodemon --exec ts-node --files -T -P ./tsconfig.json ./src/main.ts",
-    "start:test": "cross-env-shell NODE_ENV=test nodemon --exec ts-node --files -T -P ./tsconfig.json ./src/main.ts",
-    "start:prod": "cross-env-shell NODE_ENV=production nodemon --exec ts-node --files -T -P ./tsconfig.json ./src/main.ts",
-    "build": "cross-env-shell NODE_ENV=production tsc -P ./tsconfig.json",
+    "start:dev": "cross-env-shell NODE_ENV=development nodemon --exec 'ts-node -r module-alias/register' --files -T -P ./tsconfig.json ./src/main.ts",
+    "start:test": "cross-env-shell NODE_ENV=test nodemon --exec 'ts-node -r module-alias/register' --files -T -P ./tsconfig.json ./src/main.ts",
+    "start:prod": "cross-env-shell NODE_ENV=production nodemon --exec 'ts-node -r module-alias/register' --files -T -P ./tsconfig.json ./src/main.ts",
+    "build": "tsc -p ./tsconfig.json",
     "serve": "cross-env-shell NODE_ENV=production nodemon dist/main.js"
   },
-  "keywords": ["koa", "vue3-ts-cms", "cms"],
+  "keywords": [
+    "koa",
+    "vue3-ts-cms",
+    "cms"
+  ],
   "author": "HersanKuang",
   "license": "MIT",
   "dependencies": {
@@ -25,6 +29,7 @@
     "koa-bodyparser": "^4.4.1",
     "module-alias": "^2.2.3",
     "mysql2": "^3.4.1",
+    "tsconfig-paths": "^4.2.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

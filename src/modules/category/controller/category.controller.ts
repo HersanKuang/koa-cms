@@ -1,5 +1,5 @@
-import CategoryService from '../../category/service/category.service'
-import { SERVER_BASE_ERROR } from '../../../config/error.constant'
+import CategoryService from '@/modules/category/service/category.service'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 class CategoryController {
   async create(ctx: KoaCTX) {

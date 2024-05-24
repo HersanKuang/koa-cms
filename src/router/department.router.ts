@@ -5,7 +5,7 @@ import {
   update,
   remove,
   list
-} from '../modules/department/controller/department.controller'
+} from '@/modules/department/controller/department.controller'
 
 const departmentRouter = new Router({ prefix: '/department' })
 

@@ -1,5 +1,5 @@
 import departmentService from '../service/department.service'
-import { SERVER_BASE_ERROR } from '../../../config/error.constant'
+import { SERVER_BASE_ERROR } from '@/config/error.constant'
 
 class DepartmentController {
   async create(ctx: KoaCTX) {

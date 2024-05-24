@@ -5,7 +5,7 @@ import {
   DB_NAME,
   DB_USER,
   DB_PASSWORD
-} from '../config/server.config'
+} from '@/config/server.config'
 
 const connectionPool = mysql.createPool({
   host: DB_HOST || 'localhost',

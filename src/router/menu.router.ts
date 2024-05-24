@@ -1,6 +1,6 @@
 import Router from '@koa/router'
 import verifyAuth from '../shared/middleware/verify_auth.middleware'
-import { create, list } from '../modules/menu/controller/menu.controller'
+import { create, list } from '@/modules/menu/controller/menu.controller'
 
 const menuRouter = new Router({ prefix: '/menu' })
 

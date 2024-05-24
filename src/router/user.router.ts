@@ -6,13 +6,13 @@ import {
   remove,
   list,
   detail
-} from '../modules/user/controller/user.controller'
+} from '@/modules/user/controller/user.controller'
 import {
   verifyUser,
   handlePassword,
   verifyNameExists,
   verifyUserExists
-} from '../modules/user/middleware/user.middleware'
+} from '@/modules/user/middleware/user.middleware'
 
 const userRouter = new Router({ prefix: '/users' })
 

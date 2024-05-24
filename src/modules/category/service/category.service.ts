@@ -1,4 +1,4 @@
-import connection from '../../../app/databases'
+import connection from '@/app/databases'
 
 class CategoryService {
   async create(categoryInfo: Record<string, any>) {

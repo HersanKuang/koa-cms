@@ -19,8 +19,15 @@
     "removeComments": false,                     // 不删除编译后代码中的注释
     "experimentalDecorators": true,              // 启用对 ES 装饰器的实验性支持
     "emitDecoratorMetadata": true,               // 为装饰器提供元数据支持
+    "baseUrl": ".",
     "paths": {
-      "mysql2": ["./typings/mysql2.d.ts"]
+      "mysql2": ["./typings/mysql2.d.ts"],
+      "@/app/*": ["src/app/*"],
+      "@/config/*": ["src/config/*"],
+      "@/modules/*": ["src/modules/*"],
+      "@/router/*": ["src/router/*"],
+      "@/shared/*": ["src/shared/*"],
+      "@/utils/*": ["src/utils/*"]
     }
   },
   "include": [
