@@ -6,7 +6,9 @@ const {
   DB_PORT,
   DB_NAME,
   DB_USER,
-  DB_PASSWORD
+  DB_PASSWORD,
+  PRIVATE_KEY_URL,
+  PUBLIC_KEY_URL
 } = process.env
 
 // 导出环境变量
@@ -17,5 +19,7 @@ export {
   DB_PORT,
   DB_NAME,
   DB_USER,
-  DB_PASSWORD
+  DB_PASSWORD,
+  PRIVATE_KEY_URL,
+  PUBLIC_KEY_URL
 }

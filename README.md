@@ -10,7 +10,7 @@
   - `pnpm start:dev`
 - 打包之后部署服务器
   - 使用 tsc 编译成 cjs 代码：`pnpm build`
-  - 需要将 src/config/keys/ 目录拷贝到 dist 对应的目录中
+  - 需要将 src/config/keys/ 目录拷贝到 dist 对应的目录中（最新版本已不需要）
   - 测试打包后的代码是否能正常运行：`pnpm serve`
 
 ### 理解思路
